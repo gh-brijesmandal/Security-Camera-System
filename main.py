@@ -2,7 +2,6 @@ import cv2
 import time
 import datetime
 
-
 # creating camera object
 cam = cv2.VideoCapture(0)  # given access to default camera
 
@@ -45,13 +44,12 @@ while True:
             if time.time() - current_time >= 5:
                 detection = False
                 timer_started = False
-                out.release()
+                out.release()  # save the recording
                 print("Stopped Recording!")
         else:
             timer_started = True
             current_time = time.time()
     
-
     if detection:
         out.write(frame) # write the frame in video
 
